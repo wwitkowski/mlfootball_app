@@ -15,7 +15,8 @@ export const GetSchedule = (date) => async dispatch  => {
         })
     } catch (e) {
         dispatch({
-            type: "SCHEDULE_FAIL"
+            type: "SCHEDULE_FAIL",
+            errorMsg: e
         })
     }
 }

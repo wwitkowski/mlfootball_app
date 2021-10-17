@@ -4,21 +4,21 @@ const DefaultState = {
     errorMsg: ""
 }
 
-const ScheduleReducer = (state = DefaultState, action) => {
+const MatchStatsReducer = (state = DefaultState, action) => {
     switch (action.type) {
-        case "SCHEDULE_LOADING":
+        case "MATCH_STATS_LOADING":
             return {
                 ...state,
                 loading: true,
                 errorMsg: ""
             }
-        case "SCHEDULE_FAIL":
+        case "MATCH_STATS_FAIL":
             return {
                 ...state,
                 loading: false,
-                errorMsg: `Failed to load Schedule. ${action.errorMsg}`
+                errorMsg: `Failed to load match stats. ${action.errorMsg}`
             }
-        case "SCHEDULE_SUCCESS":
+        case "MATCH_STATS_SUCCESS":
             return {
                 ...state,
                 loading: false,
@@ -30,4 +30,4 @@ const ScheduleReducer = (state = DefaultState, action) => {
     }
 }
 
-export default ScheduleReducer
+export default MatchStatsReducer

@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react"
 import { GetSchedule } from "../api/GetSchedule"
 import Fixture from "./Fixture"
 import DateBar from "./DateBar"
+import { Link } from "react-router-dom"
 
 const Schedule = () => {
     const dispatch = useDispatch()
@@ -39,14 +40,27 @@ const Schedule = () => {
             return Object.keys(leagueList).map( (league, index) => {
                 return <div key={index}>
                     <h4>{league}</h4>
-                    {Object.values(leagueList[league]).map((match) => (
-                        <Fixture key={match.id} match={match}/>
+                        {Object.values(leagueList[league]).map((match) => (                              
+                            <Link to={{
+                                pathname: `/match/${match.id}`,
+                                state: {
+                                    team1: `${match.team1}`,
+                                    team2: `${match.team2}`,
+                                    league: `${match.league_id}`,
+                                    season: `${match.season}`
+                                }
+                            }}>
+                                <div>
+                                    <Fixture key={match.id} match={match}/>
+                                </div>
+                            </Link>
                     ))}
+
                 </div>
             })
         }
         if (schedule.errorMsg !== "") {
-            return <p>schedule.errorMsg</p>
+            return <p>{schedule.errorMsg}</p>
         }
 
         return <p>Unable to return Schedule.</p>
