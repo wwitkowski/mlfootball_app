@@ -1,7 +1,6 @@
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min"
 import { Container, Col, Row } from "react-bootstrap"
-import MatchStats from "./MatchStats"
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Legend, ResponsiveContainer } from 'recharts';
+import TeamStatsComparison from "./TeamStatsComparison"
 
 const Dashboard = () => {
     const location = useLocation()
@@ -11,7 +10,7 @@ const Dashboard = () => {
         <Container fluid>
             <Row>
                 <Col>
-                    <MatchStats 
+                    <TeamStatsComparison 
                         season={location.state.season}
                         league={location.state.league}  
                         team1={location.state.team1}  

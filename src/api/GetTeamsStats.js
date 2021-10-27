@@ -1,7 +1,7 @@
 import axios from "axios"
 
 
-export const GetMatchStats = (season, league, team1, team2) => async dispatch  => {
+export const GetTeamsStats = (season, league, team1, team2) => async dispatch  => {
     try {
         dispatch({
             type: "MATCH_STATS_LOADING"

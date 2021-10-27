@@ -4,7 +4,7 @@ const DefaultState = {
     errorMsg: ""
 }
 
-const MatchStatsReducer = (state = DefaultState, action) => {
+const TeamStatsComparisonReducer = (state = DefaultState, action) => {
     switch (action.type) {
         case "MATCH_STATS_LOADING":
             return {
@@ -30,4 +30,4 @@ const MatchStatsReducer = (state = DefaultState, action) => {
     }
 }
 
-export default MatchStatsReducer
+export default TeamStatsComparisonReducer
