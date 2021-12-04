@@ -4,21 +4,21 @@ const DefaultState = {
     errorMsg: ""
 }
 
-const TeamStatsComparisonReducer = (state = DefaultState, action) => {
+const TeamStatsWeightedReducer = (state = DefaultState, action) => {
     switch (action.type) {
-        case "TEAMS_STATS_LOADING":
+        case "TEAMS_WEIGHTED_STATS_LOADING":
             return {
                 ...state,
                 loading: true,
                 errorMsg: ""
             }
-        case "TEAMS_STATS_FAIL":
+        case "TEAMS_WEIGHTED_STATS_FAIL":
             return {
                 ...state,
                 loading: false,
-                errorMsg: `Failed to load match stats. ${action.errorMsg}`
+                errorMsg: `Failed to load weighted stats. ${action.errorMsg}`
             }
-        case "TEAMS_STATS_SUCCESS":
+        case "TEAMS_WEIGHTED_STATS_SUCCESS":
             return {
                 ...state,
                 loading: false,
@@ -30,4 +30,4 @@ const TeamStatsComparisonReducer = (state = DefaultState, action) => {
     }
 }
 
-export default TeamStatsComparisonReducer
+export default TeamStatsWeightedReducer

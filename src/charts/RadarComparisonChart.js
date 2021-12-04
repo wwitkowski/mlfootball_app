@@ -13,8 +13,8 @@ import {
 const RadarComparisonChart = ( {data, team1Name, team2Name} ) => {
 
     return (
-        <ResponsiveContainer width={260} height={340}>    
-            <RadarChart outerRadius={"70%"}  data={data}>
+        <ResponsiveContainer width={260} height={280}>    
+            <RadarChart cx="50%" cy="60%" outerRadius={"70%"}  data={data}>
                 <Legend verticalAlign="top" align='center'/>
                 <PolarGrid />
                 <PolarAngleAxis dataKey="stat" />

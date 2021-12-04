@@ -2,14 +2,15 @@ import { useDispatch, useSelector } from "react-redux"
 import _ from "lodash"
 import { useEffect } from "react"
 import { GetTeamsStats } from "../api/GetTeamsStats"
-
 import { Col, Row } from "react-bootstrap"
 import RadarComparisonChart from "../charts/RadarComparisonChart";
 import StackedBarComparisonChart from "../charts/StackedBarComparisonChart";
 
 
-const TeamStatsComparison = ( {season, league, team1, team2} ) => {
-    
+const TeamStatsComparison = ( {season, league, home_team_data, away_team_data} ) => {
+
+    const team1 = home_team_data["home"]["team"]
+    const team2 = away_team_data["away"]["team"]
     const dispatch = useDispatch()
     const stats = useSelector(state => state.TeamStatsComparison)
 
@@ -21,7 +22,7 @@ const TeamStatsComparison = ( {season, league, team1, team2} ) => {
             team2
         )
         
-      }, [])
+      }, [season, league, team1, team2])
 
     const FetchData = (season, league, team1, team2) => {
         dispatch(GetTeamsStats(season, league, team1, team2))
@@ -78,17 +79,13 @@ const TeamStatsComparison = ( {season, league, team1, team2} ) => {
 
 
         return <Row>
-            <Row>
                 <Col>
                     <RadarComparisonChart data={attStats} team1Name={team1} team2Name={team2} />
                 </Col>
                 <Col>
                     <RadarComparisonChart data={defStats} team1Name={team1} team2Name={team2} />    
                 </Col>
-            </Row>
-            <Row>
                 <StackedBarComparisonChart data={barStats} team1Name={team1} team2Name={team2} />
-            </Row>
         </Row>
     }
     if (stats.errorMsg !== "") {
@@ -96,7 +93,7 @@ const TeamStatsComparison = ( {season, league, team1, team2} ) => {
     }
 
     return <p>Unable to return match stats.</p>
-    }
+}
 
 
 export default TeamStatsComparison

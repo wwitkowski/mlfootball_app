@@ -10,7 +10,7 @@ import {
   } from "recharts";
 
 
-const StackedBarComparisonChart = ( {data, team1Name, team2Name} ) => {
+const StackedBarChart = ( {data, dataKey} ) => {
 
     const renderCustomizedLabel = (props) => {
         const { content, ...rest } = props;
@@ -19,30 +19,22 @@ const StackedBarComparisonChart = ( {data, team1Name, team2Name} ) => {
     }
 
     return (
-        <ResponsiveContainer width={600} height={600}>
+        <ResponsiveContainer width={500} height={600}>
             <BarChart
                 layout="vertical"
                 data={data}
                 margin={{ left: 50, right: 50 }}
-                stackOffset="expand"
             >
                 <XAxis hide type="number" />
                 <YAxis
                     type="category"
-                    dataKey="stat"
+                    dataKey="team"
                     fontSize="12"
                 />
                 <Tooltip />
-                <Bar dataKey={team1Name} fill="#20e0e3" stackId="a">
+                <Bar dataKey={dataKey} fill="#808080" >
                     <LabelList
-                        dataKey={team1Name}
-                        position="center"
-                        content={renderCustomizedLabel}
-                    />
-                </Bar>
-                <Bar dataKey={team2Name} fill="#d619e0" stackId="a">
-                    <LabelList
-                        dataKey={team2Name}
+                        dataKey={dataKey}
                         position="center"
                         content={renderCustomizedLabel}
                     />
@@ -53,4 +45,4 @@ const StackedBarComparisonChart = ( {data, team1Name, team2Name} ) => {
 
 }
 
-export default StackedBarComparisonChart
+export default StackedBarChart

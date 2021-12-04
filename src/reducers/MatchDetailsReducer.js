@@ -4,21 +4,21 @@ const DefaultState = {
     errorMsg: ""
 }
 
-const TeamStatsComparisonReducer = (state = DefaultState, action) => {
+const MatchDetailsReducer = (state = DefaultState, action) => {
     switch (action.type) {
-        case "TEAMS_STATS_LOADING":
+        case "MATCH_DETAILS_LOADING":
             return {
                 ...state,
                 loading: true,
                 errorMsg: ""
             }
-        case "TEAMS_STATS_FAIL":
+        case "MATCH_DETAILS_FAIL":
             return {
                 ...state,
                 loading: false,
-                errorMsg: `Failed to load match stats. ${action.errorMsg}`
+                errorMsg: `Failed to load league stats. ${action.errorMsg}`
             }
-        case "TEAMS_STATS_SUCCESS":
+        case "MATCH_DETAILS_SUCCESS":
             return {
                 ...state,
                 loading: false,
@@ -30,4 +30,4 @@ const TeamStatsComparisonReducer = (state = DefaultState, action) => {
     }
 }
 
-export default TeamStatsComparisonReducer
+export default MatchDetailsReducer
