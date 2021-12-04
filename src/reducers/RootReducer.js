@@ -1,10 +1,18 @@
 import { combineReducers } from "redux";
-import MatchStatsReducer from "./MatchStatsReducer";
+import TeamStatsComparisonReducer from "./TeamStatsComparisonReducer";
 import ScheduleReducer from "./ScheduleReducer";
+import LeagueComparisonReducer from "./LeagueComparisonReducer";
+import MatchDetailsReducer from "./MatchDetailsReducer";
+import TeamStatsWeightedReducer from "./TeamsStatsWeightedReducer";
+import SimilarMatchResultsReducer from "./SimilarMatchResultsReducer";
 
 const RootReducer = combineReducers({
     Schedule: ScheduleReducer,
-    MatchStats: MatchStatsReducer
+    TeamStatsComparison: TeamStatsComparisonReducer,
+    LeagueComparison: LeagueComparisonReducer,
+    MatchDetails: MatchDetailsReducer,
+    TeamStatsWeighted: TeamStatsWeightedReducer,
+    SimilarMatchResults: SimilarMatchResultsReducer
 })
 
 export default RootReducer
