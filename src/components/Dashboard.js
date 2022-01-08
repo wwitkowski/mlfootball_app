@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from "react-redux"
 import _ from "lodash"
 import { useEffect } from "react"
 import { GetMatchDetails } from "../api/GetMatchDetails"
-import TeamStatsComparison from "./TeamStatsComparison"
-import LeagueComparison from "./LeagueComparison"
+
 import MatchDetails from "./MatchDetails"
+import Tabs from "./Tabs"
 
 const Dashboard = (props) => {
     const location = useLocation()
@@ -49,27 +49,12 @@ const Dashboard = (props) => {
                         /> */}
                     </Col>
                     <Col xs={8}>
-                        <Row>
-                            <p>This season / weighted</p>
-                        </Row>
-                        <Row>
-                        <Col>
-                            <TeamStatsComparison 
-                                season={season}
-                                league={league}  
-                                home_team_data={home_team_data}  
-                                away_team_data={away_team_data}  
-                            />
-                        </Col>
-                        <Col>
-                            <LeagueComparison
-                                season={season}
-                                league={league}  
-                                home_team_data={home_team_data}  
-                                away_team_data={away_team_data}  
-                            />
-                        </Col>
-                        </Row>
+                        <Tabs 
+                            season={season}
+                            league={league}  
+                            home_team_data={home_team_data}  
+                            away_team_data={away_team_data}  
+                        />
                     </Col>
                 </Row>
             </Container>
