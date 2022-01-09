@@ -7,7 +7,7 @@ import RadarComparisonChart from "../charts/RadarComparisonChart";
 import StackedBarComparisonChart from "../charts/StackedBarComparisonChart";
 
 
-const TeamStatsComparison = ( {season, league, home_team_data, away_team_data} ) => {
+const TeamStatsComparison = ( {league, home_team_data, away_team_data, season} ) => {
 
     const team1 = home_team_data["home"]["team"]
     const team2 = away_team_data["away"]["team"]

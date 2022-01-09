@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Col, Row } from "react-bootstrap"
 import CurrentSeasonTab from "./CurrentSeasonTab"
 import TimeWeightedTab from "./TimeWeightedTab"
+import LeagueComparison from "./LeagueComparison";
 
 const Tabs = ( {season, league, home_team_data, away_team_data} ) => {
 
@@ -33,7 +34,7 @@ const Tabs = ( {season, league, home_team_data, away_team_data} ) => {
                         Time Weighted
                     </li>
                 </ul>
-                <div className='tab_content'>
+                <Row>
                     {activeTab === "tab1" ?
                         <CurrentSeasonTab
                             season={season}
@@ -42,13 +43,20 @@ const Tabs = ( {season, league, home_team_data, away_team_data} ) => {
                             away_team_data={away_team_data}
                         /> :
                         <TimeWeightedTab
-                            season={season}
-                            league={league}  
+                            league={league}
                             home_team_data={home_team_data}  
                             away_team_data={away_team_data}
                         />
                     }
-                </div>
+                    <Col>
+                        <LeagueComparison
+                            season={season}
+                            league={league}  
+                            home_team_data={home_team_data}  
+                            away_team_data={away_team_data}  
+                        />
+                    </Col>
+                </Row>
         </div>
     )
 }
