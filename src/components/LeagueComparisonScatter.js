@@ -2,11 +2,11 @@ import { useDispatch, useSelector } from "react-redux"
 import _ from "lodash"
 import { useEffect } from "react"
 import { GetStandings } from "../api/GetStandings"
-import { Col, Row } from "react-bootstrap"
+import { Row } from "react-bootstrap"
 import ScatterXGChart from "../charts/ScatterXGChart"
 
 
-const LeagueComparison = ( {season, league, home_team_data, away_team_data} ) => {
+const LeagueComparisonScatter = ( {season, league, home_team_data, away_team_data} ) => {
 
     const team1 = home_team_data["home"]["team"]
     const team2 = away_team_data["away"]["team"]
@@ -88,4 +88,4 @@ const LeagueComparison = ( {season, league, home_team_data, away_team_data} ) =>
 
 }
 
-export default LeagueComparison
+export default LeagueComparisonScatter

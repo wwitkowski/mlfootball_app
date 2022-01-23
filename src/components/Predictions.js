@@ -1,9 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import _ from "lodash"
 import { useEffect } from "react"
-import { GetStandings } from "../api/GetStandings"
-import { Col, Row } from "react-bootstrap"
-import ScatterXGChart from "../charts/ScatterXGChart"
+import { Row } from "react-bootstrap"
 import { GetWeightedTeamsStats } from "../api/GetWeightedTeamsStats"
 import { GetMatchDetails } from "../api/GetMatchDetails"
 
@@ -40,12 +38,7 @@ const Predictions = ( {id, league, team1, team2} ) => {
         return <p>Loading...</p>
     }
     if (!_.isEmpty(weightedStats.data)) {
-        console.log('weighted stats', weightedStats.data)
-
-        
-        
-        //// TODO: create predictions api function and reducer
-        
+      
         if (predictions.loading) {
             return <p>Loading...</p>
         }

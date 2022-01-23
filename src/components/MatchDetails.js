@@ -1,4 +1,3 @@
-import _ from "lodash"
 import { Col, Row } from "react-bootstrap"
 import { Card } from 'react-bootstrap';
 import SimilarMatchResults from "./SimilarMatchResults"

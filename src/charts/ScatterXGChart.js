@@ -18,10 +18,9 @@ const ScatterXGChart = ( {data,
             const { content, ...rest } = props;
             return <Label {...rest} fontSize="12" fill="#505050" />
         }
-
         return <Label />
-
     }
+
     const formatAxis = (tickItem) => {
         return Number(tickItem.toFixed(2))
       }
@@ -55,9 +54,8 @@ const ScatterXGChart = ( {data,
 
                     margin={{
                         top: 20,
-                        right: 20,
+                        right: 60,
                         bottom: 20,
-                        left: 20,
                     }}
                 >
                 <CartesianGrid />

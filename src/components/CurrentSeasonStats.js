@@ -1,9 +1,8 @@
 import TeamStatsComparison from "./TeamStatsComparison"
-import LeagueComparison from "./LeagueComparison"
-import { Col, Row } from "react-bootstrap"
+import { Col } from "react-bootstrap"
 
 
-const CurrentSeasonTab = ( {season, league, home_team_data, away_team_data} ) => {
+const CurrentSeasonStats = ( {season, league, home_team_data, away_team_data} ) => {
 
     return (
         <Col>
@@ -17,4 +16,4 @@ const CurrentSeasonTab = ( {season, league, home_team_data, away_team_data} ) =>
     )
 }
 
-export default CurrentSeasonTab
+export default CurrentSeasonStats

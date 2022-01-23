@@ -6,7 +6,6 @@ import {
     PolarRadiusAxis, 
     Legend, 
     ResponsiveContainer,
-    Label
 } from "recharts";
 
 

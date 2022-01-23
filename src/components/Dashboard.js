@@ -1,15 +1,16 @@
-import { useLocation } from "react-router-dom/cjs/react-router-dom.min"
 import { Container, Col, Row } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
 import _ from "lodash"
 import { useEffect } from "react"
 import { GetMatchDetails } from "../api/GetMatchDetails"
-
+import LeagueComparisonScatter from "./LeagueComparisonScatter"
+import LeagueComparisonBar from "./LeagueComparisonBar"
 import MatchDetails from "./MatchDetails"
+import CurrentSeasonStats from "./CurrentSeasonStats"
+import TimeWeightedStats from "./TimeWeightedStats"
 import Tabs from "./Tabs"
 
 const Dashboard = (props) => {
-    const location = useLocation()
     const id = props.match.params["match"]
 
     const dispatch = useDispatch()
@@ -49,12 +50,41 @@ const Dashboard = (props) => {
                         /> */}
                     </Col>
                     <Col xs={8}>
-                        <Tabs 
-                            season={season}
-                            league={league}  
-                            home_team_data={home_team_data}  
-                            away_team_data={away_team_data}  
-                        />
+                        <Row>
+                            <Tabs 
+                                tab1Name='Current Season'
+                                tab2Name='Time Weighted'
+                            >
+                                <CurrentSeasonStats
+                                    season={season}
+                                    league={league}  
+                                    home_team_data={home_team_data}  
+                                    away_team_data={away_team_data}
+                                />
+                                <TimeWeightedStats
+                                    league={league}
+                                    home_team_data={home_team_data}  
+                                    away_team_data={away_team_data}
+                                />
+                            </Tabs>
+                            <Tabs 
+                                tab1Name='Scatter'
+                                tab2Name='Bar'
+                            >
+                                <LeagueComparisonScatter
+                                    season={season}
+                                    league={league}  
+                                    home_team_data={home_team_data}  
+                                    away_team_data={away_team_data}
+                                />
+                                <LeagueComparisonBar
+                                   season={season}
+                                   league={league}  
+                                   home_team_data={home_team_data}  
+                                   away_team_data={away_team_data}
+                                />
+                            </Tabs>
+                        </Row>
                     </Col>
                 </Row>
             </Container>

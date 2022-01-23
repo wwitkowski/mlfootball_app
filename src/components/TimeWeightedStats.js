@@ -1,7 +1,7 @@
 import { Col, Row } from "react-bootstrap"
 import TeamStatsWeightedComparison from "./TeamStatsWeightedComparison"
 
-const TimeWeightedTab = ( {league, home_team_data, away_team_data} ) => {
+const TimeWeightedStats = ( {league, home_team_data, away_team_data} ) => {
 
     return (
         <Col>
@@ -14,4 +14,4 @@ const TimeWeightedTab = ( {league, home_team_data, away_team_data} ) => {
     )
 }
 
-export default TimeWeightedTab
+export default TimeWeightedStats

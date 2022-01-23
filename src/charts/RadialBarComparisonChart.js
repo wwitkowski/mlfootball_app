@@ -1,6 +1,4 @@
-import React, { PureComponent } from 'react';
 import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts';
-import RadarComparisonChart from './RadarComparisonChart';
 
 
 const RadialBarComparisonChart = ( {data, dataKey} ) => {

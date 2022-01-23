@@ -23,8 +23,6 @@ const SimilarMatchResults = ( {spi1, spi2, team1, team2} ) => {
         return <p>Loading...</p>
     }
     if (!_.isEmpty(similar.data)) {
-        console.log(similar.data)
-
         const results = [
             { name: 'Home win', team: team1, value: similar.data.response["home_win"], color: '#20e0e3' },
             { name: 'Draw', team: "Draw", value: similar.data.response["draw"], color: '#808080' },
